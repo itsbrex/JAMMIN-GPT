@@ -46,3 +46,15 @@ python main.py
 - Make sure you have added AbletonOSC as a control surface in Ableton
 - Sometimes there is an orange colored message in the bottom status bar of Ableton
 - There are ways to debug remote scripts in Ableton and see print statements, guides can be found online
+
+
+### Citation
+If you find this useful, please consider citing our work:
+```
+@inproceedings{hollowell2023jammin,
+  title={Jammin-gpt: Text-based Improvisation using LLMs in Ableton Live},
+  author={Hollowell, Sven and Namgyal, Tashi and Marshall, Paul},
+  booktitle={23rd International Society for Music Information Retrieval Conference: Late Breaking/Demo Session},
+  year={2023}
+}
+```
