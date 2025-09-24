@@ -5,7 +5,7 @@ from copy import deepcopy
 from chatlib import get_completion
 from mido import MidiFile
 
-MODEL_NUM = 4
+MODEL_NUM = 5.5
 SYSTEM = """You generate music in ABC notation, respond with notation between ```abc blocks and no other text.
 Set MIDI-instrument using: %%MIDI program {GM number} (after the V: block) for drums set %%MIDI channel 10"""
 

@@ -118,6 +118,10 @@ def get_completion(
         model = "gpt-4o-mini" # effectively the new gpt-3.5
     elif model_num == 4:
         model = "gpt-4o"
+    elif model_num == 5:
+        model = "gpt-5"
+    elif model_num == 5.5:
+        model = "gpt-5-mini"
     else:
         raise Exception("Invalid model_num")
     print("using model", model)
@@ -130,14 +134,21 @@ def get_completion(
         ]
 
     client = OpenAI()
+    if model_num > 4:
+          # gpt-5 only supports temp=1
+        completion = client.chat.completions.create(
+            model=model,
+            messages=messages
+        )
+    else:
 
-    completion = client.chat.completions.create(
-        model=model,
-        messages=messages,
-        temperature=0.7,
-        frequency_penalty=frequency_penalty,
-        presence_penalty=presence_penalty,
-    )
+        completion = client.chat.completions.create(
+            model=model,
+            messages=messages,
+            temperature=0.7,
+            frequency_penalty=frequency_penalty,
+            presence_penalty=presence_penalty,
+        )
     # usage = completion["usage"]
     # cost = calculate_cost(usage, model)
     # print("API cost:" cost)
